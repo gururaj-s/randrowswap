@@ -1,0 +1,118 @@
+Authors: Gururaj Saileshwar (Georgia Tech), Bolin Wang (UBC), Moin Qureshi (Georgia Tech), and Prashant Nair (UBC)
+
+Kindly follow these steps sequentially.
+
+--- COMPILING AND EXECUTING RRS and BASELINE  --
+
+     --- COMPILE ---
+
+         1. Compile baseline with the following steps from the RRS folder
+         
+            $ cd src_baseline
+            $ make clean
+            $ make
+
+
+
+        2. Compile RRS with the following steps from the RRS folder
+
+            $ cd src_rrs
+            $ make clean
+            $ make
+
+
+
+
+
+    --- COPY ---
+
+        3. Copy Benchmarks from Google Drive and place them in the ./input folder
+            Link to copy the benchmarks from --> https://drive.google.com/drive/folders/1m3gTuy8alt5IriP-cCtch_1-CbLSKD2A?usp=sharing
+            a. Copy SPEC2017 benchmarks into: ./input/SPEC2K17 folder
+            b. Copy SPEC2006 benchmarks into: ./input/SPEC2K6 folder
+            c. Copy GAP benchmarks into: ./input/GAP folder
+            d. Copy BIOBENCH benchmarks into: ./input/BIOBENCH folder
+            e. Copy PARSEC benchmarks into: ./input/PARSEC folder
+
+
+
+
+
+
+    --- EXECUTE ---
+
+        3. Run baseline with the following command from the RRS folder
+         
+            $ cd simscript
+            $ ./runall_baseline.sh
+
+         -- Note this command fires all baseline sims: ~78 of them --> takes 7-8 hours to complete.
+
+
+
+        4. Run RRS with the following command from the RRS folder
+         
+            $ cd simscript
+            $ ./runall_rrs.sh
+
+         -- Note this command fires all RRS sims: ~78 of them --> takes 7-8 hours to complete.
+
+
+
+
+
+
+
+    -- COLLATE RESULTS ---
+
+    ONLY AFTER ALL SIMULATIONS COMPLETE --> typically 7-8 hours later, you may try to collate the results
+
+
+        5. Check the performance of RRS with Baseline using the following command - Fig 6. To get the normalized performance of the left half of the graphs i.e. Workloads with at least one row having > 800 activations / 64ms
+            
+            $ ./getdata.pl -s ADDED_IPC -w interest_name -n 0 -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
+
+
+
+        6. Check the performance of RRS with Baseline using the following command - Fig 6. To get the normalized performance of the right half of the graphs i.e. Average Values
+            
+            $ ./getdata.pl -s ADDED_IPC -w spec2006_name -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
+            
+            --> Note the gmean value ONLY for SPEC 2006
+
+            
+            $ ./getdata.pl -s ADDED_IPC -w spec2017_name -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
+            
+            --> Note the gmean value ONLY for SPEC 2017
+
+         
+            $ ./getdata.pl -s ADDED_IPC -w gap_name -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
+            
+            --> Note the gmean value ONLY for GAP
+
+         
+            $ ./getdata.pl -s ADDED_IPC -w parsec_name -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
+            
+            --> Note the gmean value ONLY for PARSEC
+
+
+            $ ./getdata.pl -s ADDED_IPC -w biobench_name -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
+            
+            --> Note the gmean value ONLY for BIOBENCH
+
+
+            $ ./getdata.pl -s ADDED_IPC -w comm_name -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
+            
+            --> Note the gmean value ONLY for COMM
+
+
+            $ ./getdata.pl -s ADDED_IPC -w mix_name -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
+            
+            --> Note the gmean value ONLY for MIX
+
+
+            $ ./getdata.pl -s ADDED_IPC -w all78 -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
+            
+            --> Note the gmean value ONLY -- considers all the benchmarks
+
+    These numbers should be reflective of Figure 6 -- Performance Numbers.

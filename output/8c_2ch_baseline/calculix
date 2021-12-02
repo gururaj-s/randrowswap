@@ -1,0 +1,540 @@
+---------------------------------------------
+-- USIMM: the Utah SImulated Memory Module --
+--              Version: 1.3               --
+---------------------------------------------
+Initializing.
+../input/2channel.cfg
+Core 0: Input trace file ../input/SPEC2K6/calculix.gz : Addresses will have prefix 0
+Core 1: Input trace file ../input/SPEC2K6/calculix.gz : Addresses will have prefix 1
+Core 2: Input trace file ../input/SPEC2K6/calculix.gz : Addresses will have prefix 2
+Core 3: Input trace file ../input/SPEC2K6/calculix.gz : Addresses will have prefix 3
+Core 4: Input trace file ../input/SPEC2K6/calculix.gz : Addresses will have prefix 4
+Core 5: Input trace file ../input/SPEC2K6/calculix.gz : Addresses will have prefix 5
+Core 6: Input trace file ../input/SPEC2K6/calculix.gz : Addresses will have prefix 6
+Core 7: Input trace file ../input/SPEC2K6/calculix.gz : Addresses will have prefix 7
+Reading vi file: 8Gb_x8.vi	
+8 Chips per Rank
+----------------------------------------------------------------------------------------
+------------------------
+- SIMULATOR PARAMETERS -
+------------------------
+
+-------------
+-  INST/CORE  -
+-------------
+INSTRUCTIONS PER CORE:   	  1000 Million
+
+-------------
+- PROCESSOR -
+-------------
+PROCESSOR_CLK_MULTIPLIER:        2
+ROBSIZE:                       160
+MAX_FETCH:                       4
+MAX_RETIRE:                      4
+PIPELINEDEPTH:                  10
+
+---------------
+- DRAM Config -
+---------------
+NUM_CHANNELS:                    2
+NUM_RANKS:                       1
+NUM_BANKS:                      16
+NUM_ROWS:                   131072
+NUM_COLUMNS:                   128
+
+---------------
+- DRAM Timing -
+---------------
+T_RCD:                          44
+T_RP:                           44
+T_CAS:                          44
+T_RC:                          146
+T_RAS:                         102
+T_RRD:                          12
+T_FAW:                          52
+T_WR:                           48
+T_WTR:                          12
+T_RTP:                          24
+T_CCD:                          12
+T_RFC:                        1120
+T_REFI:                      24960
+T_CWD:                          10
+T_RTRS:                          4
+T_PD_MIN:                        8
+T_XP:                           10
+T_XP_DLL:                       40
+T_DATA_TRANS:                    8
+
+---------------------------
+- DRAM Idd Specifications -
+---------------------------
+VDD:                        01.50
+IDD0:                       55.00
+IDD2P0:                     16.00
+IDD2P1:                     32.00
+IDD2N:                      28.00
+IDD3P:                      38.00
+IDD3N:                      38.00
+IDD4R:                      147.00
+IDD4W:                      118.00
+IDD5:                       155.00
+
+-------------------
+- DRAM Controller -
+-------------------
+WQ_CAPACITY:                    96
+RQ_CAPACITY:                    96
+ADDRESS_MAPPING:                 1
+WQ_LOOKUP_LATENCY:              10
+
+-------------------
+- Cache Mode -
+-------------------
+CACHE_SIZE:                      8
+
+-------------------
+- OS -
+-------------------
+PAGE_SIZE:                  4096
+RAND_TRIES:                 5
+
+-------------------
+- CONFIG MODE -
+-------------------
+BENCHMARKING MODE:          1
+
+----------------------------------------------------------------------------------------
+Initialized OS for 4194304 pages
+CONFIG PARAM FOR SCHEDULER: 2
+Starting simulation.
+.......... - 100 Million Instructions
+.......... - 200 Million Instructions
+.......... - 300 Million Instructions
+.......... - 400 Million Instructions
+.......... - 500 Million Instructions
+.......... - 600 Million Instructions
+.......... - 700 Million Instructions
+.......... - 800 Million Instructions
+.......... - 900 Million Instructions
+.......... - 1000 Million Instructions
+.......... - 1100 Million Instructions
+.......... - 1200 Million Instructions
+.......... - 1300 Million Instructions
+.......... - 1400 Million Instructions
+.......... - 1500 Million Instructions
+.......... - 1600 Million Instructions
+.......... - 1700 Million Instructions
+.......... - 1800 Million Instructions
+.......... - 1900 Million Instructions
+.......... - 2000 Million Instructions
+.......... - 2100 Million Instructions
+.......... - 2200 Million Instructions
+.......... - 2300 Million Instructions
+.......... - 2400 Million Instructions
+.......... - 2500 Million Instructions
+.......... - 2600 Million Instructions
+.......... - 2700 Million Instructions
+.......... - 2800 Million Instructions
+.......... - 2900 Million Instructions
+.......... - 3000 Million Instructions
+.......... - 3100 Million Instructions
+.......... - 3200 Million Instructions
+.......... - 3300 Million Instructions
+.......... - 3400 Million Instructions
+.......... - 3500 Million Instructions
+.......... - 3600 Million Instructions
+.......... - 3700 Million Instructions
+.......... - 3800 Million Instructions
+.......... - 3900 Million Instructions
+.......... - 4000 Million Instructions
+.......... - 4100 Million Instructions
+.......... - 4200 Million Instructions
+.......... - 4300 Million Instructions
+.......... - 4400 Million Instructions
+.......... - 4500 Million Instructions
+.......... - 4600 Million Instructions
+.......... - 4700 Million Instructions
+.......... - 4800 Million Instructions
+.......... - 4900 Million Instructions
+.......... - 5000 Million Instructions
+.......... - 5100 Million Instructions
+.......... - 5200 Million Instructions
+.......... - 5300 Million Instructions
+.......... - 5400 Million Instructions
+.......... - 5500 Million Instructions
+.......... - 5600 Million Instructions
+.......... - 5700 Million Instructions
+.......... - 5800 Million Instructions
+.......... - 5900 Million Instructions
+.......... - 6000 Million Instructions
+.......... - 6100 Million Instructions
+.......... - 6200 Million Instructions
+.......... - 6300 Million Instructions
+.......... - 6400 Million Instructions
+.......... - 6500 Million Instructions
+.......... - 6600 Million Instructions
+.......... - 6700 Million Instructions
+.......... - 6800 Million Instructions
+.......... - 6900 Million Instructions
+.......... - 7000 Million Instructions
+.......... - 7100 Million Instructions
+.......... - 7200 Million Instructions
+.......... - 7300 Million Instructions
+.......... - 7400 Million Instructions
+.......... - 7500 Million Instructions
+.......... - 7600 Million Instructions
+.......... - 7700 Million Instructions
+.......... - 7800 Million Instructions
+.......... - 7900 Million Instructions
+.........Done with loop. Printing stats.
+Cycles 366300079
+Done: Core 0: Fetched 1000000161 : Committed 1000000161 : At time : 363878400
+Done: Core 1: Fetched 1000000160 : Committed 1000000160 : At time : 361759708
+Done: Core 2: Fetched 1000000162 : Committed 1000000162 : At time : 365103283
+Done: Core 3: Fetched 1000000161 : Committed 1000000161 : At time : 366300079
+Done: Core 4: Fetched 1000000162 : Committed 1000000162 : At time : 363004193
+Done: Core 5: Fetched 1000000160 : Committed 1000000160 : At time : 365142635
+Done: Core 6: Fetched 1000000163 : Committed 1000000163 : At time : 365912161
+Done: Core 7: Fetched 1000000161 : Committed 1000000161 : At time : 364151708
+
+
+---------------------------------
+ADDED_USIMM_CYCLES 	 : 2915252167
+ADDED_USIMM_INST   	 : 8000001290
+ADDED_IPC	       	 : 2.744188
+---------------------------------
+
+PREFETCH_HIT 0
+*****************************
+CYCLE_CORE0        	 : 363878400
+INST_CORE0         	 : 1000000161
+IPC_CORE0	    	 : 2.748171
+*****************************
+
+*****************************
+CYCLE_CORE1        	 : 361759708
+INST_CORE1         	 : 1000000160
+IPC_CORE1	    	 : 2.764266
+*****************************
+
+*****************************
+CYCLE_CORE2        	 : 365103283
+INST_CORE2         	 : 1000000162
+IPC_CORE2	    	 : 2.738951
+*****************************
+
+*****************************
+CYCLE_CORE3        	 : 366300079
+INST_CORE3         	 : 1000000161
+IPC_CORE3	    	 : 2.730003
+*****************************
+
+*****************************
+CYCLE_CORE4        	 : 363004193
+INST_CORE4         	 : 1000000162
+IPC_CORE4	    	 : 2.754790
+*****************************
+
+*****************************
+CYCLE_CORE5        	 : 365142635
+INST_CORE5         	 : 1000000160
+IPC_CORE5	    	 : 2.738656
+*****************************
+
+*****************************
+CYCLE_CORE6        	 : 365912161
+INST_CORE6         	 : 1000000163
+IPC_CORE6	    	 : 2.732897
+*****************************
+
+*****************************
+CYCLE_CORE7        	 : 364151708
+INST_CORE7         	 : 1000000161
+IPC_CORE7	    	 : 2.746109
+*****************************
+
+Fake number is 0
+
+
++++++++++++++++++++++++++++++++++
+MIN_USIMM_CYCLES 	 : 366300079
+MIN_FETCH_INST   	 : 1000000163
+MIN_IPI          	 : 2.730003
++++++++++++++++++++++++++++++++++
+
+TOTAL_MCPI	   	 : 190.281854
+################################
+READREQ_CORE0	      	 : 1110453
+MCPI_CORE0	      	 : 187.902683
+################################
+
+################################
+READREQ_CORE1	      	 : 1107795
+MCPI_CORE1	      	 : 181.568747
+################################
+
+################################
+READREQ_CORE2	      	 : 1123831
+MCPI_CORE2	      	 : 190.328945
+################################
+
+################################
+READREQ_CORE3	      	 : 1118330
+MCPI_CORE3	      	 : 198.479785
+################################
+
+################################
+READREQ_CORE4	      	 : 1110216
+MCPI_CORE4	      	 : 184.754263
+################################
+
+################################
+READREQ_CORE5	      	 : 1113876
+MCPI_CORE5	      	 : 191.614610
+################################
+
+################################
+READREQ_CORE6	      	 : 1117316
+MCPI_CORE6	      	 : 196.905278
+################################
+
+################################
+READREQ_CORE7	      	 : 1111772
+MCPI_CORE7	      	 : 190.574377
+################################
+
+TOTAL_FAKE_REQ	      		 : 0
+TOTAL_READ_REQ	      		 : 8913589
+TOTAL_FAKE_READREQ_RATIO    	 : 0.000000
+SANDBOX 	 : -nan
+
+USIMM_ROBN_STALLS     	 : 0
+
+USIMM_WRQF_STALLS     	 : 0
+
+USIMM_WRQN_STALLS     	 : 0
+Num_Reads_Merged: 1913
+Num_Writes_Merged: 0
+Above200 : 1603
+Above400 : 1411
+Above600 : 1174
+Above800 : 947
+Above1000 : 662
+Above1200 : 445
+Above1400 : 302
+Above1600 : 191
+Above1800 : 112
+Above2000 : 66
+Above2200 : 27
+Above2400 : 14
+
+
+M1SB	 : -nan
+Total fake number is 0
+==========================================================
+==========            LLC Statistics           ===========
+==========================================================
+Cache Configuration: 
+	CacheSize :     8192K
+	LineSize :      64B
+	Associativity :  16
+	Tot_Sets :     8192
+Cache Statistics: 
+
+Overall Cache stat:
+Overall_Accesses : 85755864
+Overall_Misses :   8941138
+Overall_Hits :     76814726
+Overall_MissRate 	 : 10.426270
+Overall_HitRate 	 : 89.573730
+
+Cache Reads:
+Overall_Read_Hits :     67403290
+Overall_Reads :     76318792
+Overall_Read_HitRate 	 : 88.318078
+
+Cache Writes:
+Overall_Write_Hits :     9411436
+Overall_Write :     9437072
+Overall_Write_HitRate 	 : 99.728348
+
+Overall_Write_Read :     0.123653
+
+Overall_MPKI :     1.117642
+
+Act_Countc0r0 :	1034239.32824
+-------- Channel0_Stats-----------
+Reads_Serviced_Channel0 :      4440419
+Writes_Serviced_Channel0 :     1209840
+Avg_Read_Latency_Channel0 :    236.36116
+Avg_Read_Q_Latency_Channel0 :  184.36116
+Avg_Write_Q_Latency_Channel0 : 2931.57494
+Avg_Write_Q_Latency_Channel0 : 2875.57494
+Read_Page_Hit_Rate_Channel0 :  0.74784
+Write_Page_Hit_Rate_Channel0 : 0.39740
+------------------------------------
+Act_Countc1r0 :	1046385.17666
+-------- Channel1_Stats-----------
+Reads_Serviced_Channel1 :      4473170
+Writes_Serviced_Channel1 :     1227959
+Avg_Read_Latency_Channel1 :    248.15920
+Avg_Read_Q_Latency_Channel1 :  196.15920
+Avg_Write_Q_Latency_Channel1 : 3023.63900
+Avg_Write_Q_Latency_Channel1 : 2967.63900
+Read_Page_Hit_Rate_Channel1 :  0.74652
+Write_Page_Hit_Rate_Channel1 : 0.40017
+------------------------------------
+-------- TOTAL_Stats-----------
+Total_Act_Count :	1040312.25245
+Reads_Serviced_total :      8913589
+Writes_Serviced_total :     2437799
+Total_Read_Latency :	242.00000
+Total_Read_Q_Latency :      190.00000
+Total_Write_Q_Latency :     2977.00000
+Total_Write_Q_Latency :     2921.00000
+Read_Page_Hit_Rate_Total :  0.74652
+Write_Page_Hit_Rate_Total : 0.40017
+------------------------------------
+
+
+
+OS_PAGE_MISS       	 : 41256
+OS_PAGE_EVICTS     	 : 0
+OS_FOOTPRINT       	 : 161
+
+---------------------------------------------------------------
+Channel0_Rank0_ReadCycles :                0.10
+Channel0_Rank0_WriteCycles :               0.03
+Channel0_Rank0_Read_Other :                 0.00
+Channel0_Rank0_Write_Other :                0.00
+Channel0_Rank0_PRE_PDN_FAST :               0.00
+Channel0_Rank0_PRE_PDN_SLOW :              0.00
+Channel0_Rank0_ACT_PDN :                    0.00
+Channel0_Rank0_ACT_STBY :                   0.94
+Channel0_Rank0_PRE_STBY :                   0.06
+---------------------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Channel0_ReadCycles :                0.10
+Channel0_WriteCycles :               0.03
+Channel0_Read_Other :                 0.00
+Channel0_Write_Other :                0.00
+Channel0_PRE_PDN_FAST :               0.00
+Channel0_PRE_PDN_SLOW :              0.00
+Channel0_ACT_PDN :                    0.00
+Channel0_ACT_STBY :                   0.94
+Channel0_PRE_STBY :                   0.06
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+---------------------------------------------------------------
+Channel1_Rank0_ReadCycles :                0.10
+Channel1_Rank0_WriteCycles :               0.03
+Channel1_Rank0_Read_Other :                 0.00
+Channel1_Rank0_Write_Other :                0.00
+Channel1_Rank0_PRE_PDN_FAST :               0.00
+Channel1_Rank0_PRE_PDN_SLOW :              0.00
+Channel1_Rank0_ACT_PDN :                    0.00
+Channel1_Rank0_ACT_STBY :                   0.95
+Channel1_Rank0_PRE_STBY :                   0.05
+---------------------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Channel1_ReadCycles :                0.10
+Channel1_WriteCycles :               0.03
+Channel1_Read_Other :                 0.00
+Channel1_Write_Other :                0.00
+Channel1_PRE_PDN_FAST :               0.00
+Channel1_PRE_PDN_SLOW :              0.00
+Channel1_ACT_PDN :                    0.00
+Channel1_ACT_STBY :                   0.95
+Channel1_PRE_STBY :                   0.05
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+===================================================
+Total_ReadCycles :                1.65
+Total_WriteCycles :               0.45
+Total_Read_Other :                 0.00
+Total_Write_Other :                0.00
+Total_PRE_PDN_FAST :               0.00
+Total_PRE_PDN_SLOW :              0.00
+Total_ACT_PDN :                    0.00
+Total_ACT_STBY :                   1.89
+Total_PRE_STBY :                   0.11
+===================================================
+
+Channel0_Rank0_Background(mw)              56.17
+Channel0_Rank0_Act(mW)                     22.20
+Channel0_Rank0_Read(mW)                    15.86
+Channel0_Rank0_Write(mW)                    3.17
+Channel0_Rank0_Read_Terminate(mW)           3.10
+Channel0_Rank0_Write_Terminate(mW)          0.00
+Channel0_Rank0_termRoth(mW)                 0.00
+Channel0_Rank0_termWoth(mW)                 0.00
+Channel0_Rank0_Refresh(mW)                  7.88
+---------------------------------------------------------------
+Channel0_Rank0_Total_Rank_Power(mW)       866.97
+---------------------------------------------------------------
+
+Channel0_Background(mw) :             56.17
+Channel0_Act(mW) :                    22.20
+Channel0_Read(mW) :                   15.86
+Channel0_Write(mW) :                   3.17
+Channel0_Read_Terminate(mW) :          3.10
+Channel0_Write_Terminate(mW) :         0.00
+Channel0_termRoth(mW) :                0.00
+Channel0_termWoth(mW) :                0.00
+Channel0_Refresh(mW) :                 7.88
+---------------------------------------------------------------
+Channel0_Total_Rank_Power(mW) :       866.97
+---------------------------------------------------------------
+
+Channel1_Rank0_Background(mw)              56.18
+Channel1_Rank0_Act(mW)                     22.48
+Channel1_Rank0_Read(mW)                    15.97
+Channel1_Rank0_Write(mW)                    3.22
+Channel1_Rank0_Read_Terminate(mW)           3.13
+Channel1_Rank0_Write_Terminate(mW)          0.00
+Channel1_Rank0_termRoth(mW)                 0.00
+Channel1_Rank0_termWoth(mW)                 0.00
+Channel1_Rank0_Refresh(mW)                  7.88
+---------------------------------------------------------------
+Channel1_Rank0_Total_Rank_Power(mW)       870.89
+---------------------------------------------------------------
+
+Channel1_Background(mw) :             56.18
+Channel1_Act(mW) :                    22.48
+Channel1_Read(mW) :                   15.97
+Channel1_Write(mW) :                   3.22
+Channel1_Read_Terminate(mW) :          3.13
+Channel1_Write_Terminate(mW) :         0.00
+Channel1_termRoth(mW) :                0.00
+Channel1_termWoth(mW) :                0.00
+Channel1_Refresh(mW) :                 7.88
+---------------------------------------------------------------
+Channel1_Total_Rank_Power(mW) :       870.89
+---------------------------------------------------------------
+
+===================================================
+Total_Background(mw) :            112.35
+Total_Act(mW) :                    44.68
+Total_Read(mW) :                   31.83
+Total_Write(mW) :                   6.39
+Total_Read_Terminate(mW) :          6.23
+Toral_Write_Terminate(mW) :         0.00
+Total_termRoth(mW) :                0.00
+Total_termWoth(mW) :                0.00
+Total_Refresh(mW) :                15.75
+---------------------------------------------------------------
+Total_Power(mW) :                1737.86
+---------------------------------------------------------------
+
+===================================================
+
+
+#-------------------------------------------------------------------------------------------------
+Total_memory_system_power : 1.737863 W
+Miscellaneous_system_power : 10 W  # Processor uncore power, disk, I/O, cooling, etc.
+Processor_core_power : 79.586449 W  # Assuming that each core consumes 5 W
+Total_system_power : 91.324310 W # Sum of the previous three lines
+EDP : 1.196631670 J.s

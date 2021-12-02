@@ -32,7 +32,8 @@ Kindly follow these steps sequentially.
             b. Copy SPEC2006 benchmarks into: ./input/SPEC2K6 folder
             c. Copy GAP benchmarks into: ./input/GAP folder
             d. Copy BIOBENCH benchmarks into: ./input/BIOBENCH folder
-            e. Copy PARSEC benchmarks into: ./input/PARSEC folder
+            e. Copy COMM benchmarks into: ./input/COMM folder
+            f. Copy PARSEC benchmarks into: ./input/PARSEC folder
 
 
 

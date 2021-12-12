@@ -1,7 +1,7 @@
 # Randomized Row Swap (ASPLOS'22)
-Paper: Randomized Row-Swap: Mitigating Row Hammer by Breaking Spatial Correlation Between Aggressor and Victim Rows
-Conference: ASPLOS'22
-Authors: Gururaj Saileshwar (Georgia Tech), Bolin Wang (UBC), Moin Qureshi (Georgia Tech), and Prashant Nair (UBC)
+**Paper**: Randomized Row-Swap: Mitigating Row Hammer by Breaking Spatial Correlation Between Aggressor and Victim Rows  
+**Conference**: ASPLOS'22  
+**Authors**: Gururaj Saileshwar (Georgia Tech), Bolin Wang (UBC), Moin Qureshi (Georgia Tech), and Prashant Nair (UBC)  
 
 ## Dependencies
 * **Software**: Perl and latest gcc/g++
@@ -12,8 +12,10 @@ Authors: Gururaj Saileshwar (Georgia Tech), Bolin Wang (UBC), Moin Qureshi (Geor
 
 Kindly follow these steps sequentially.
 
+### Clone
+`git clone https://gururaj_saileshwar@bitbucket.org/prashantnair13/rrs.git`
 
-     --- COMPILE ---
+### Compile
 
          1. Compile baseline with the following steps from the RRS folder
          

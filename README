@@ -13,7 +13,10 @@
 Kindly follow these steps sequentially.
 
 ### Clone
-`git clone https://gururaj_saileshwar@bitbucket.org/prashantnair13/rrs.git`
+    1. Fetch code: `git clone https://gururaj_saileshwar@bitbucket.org/prashantnair13/rrs.git`
+
+    2. Fetch benchmarks: `cd rrs/ ;  ./fetch_benchmarks.sh`
+
 
 ### Compile
 

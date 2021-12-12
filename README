@@ -1,8 +1,17 @@
+# Randomized Row Swap (ASPLOS'22)
+Paper: Randomized Row-Swap: Mitigating Row Hammer by Breaking Spatial Correlation Between Aggressor and Victim Rows
+Conference: ASPLOS'22
 Authors: Gururaj Saileshwar (Georgia Tech), Bolin Wang (UBC), Moin Qureshi (Georgia Tech), and Prashant Nair (UBC)
+
+## Dependencies
+* **Software**: Perl and latest gcc/g++
+* **Hardware**: For running all the benchmarks, a CPU with lots of memory (128GB+) and cores (64+).
+
+
+## Compiling and Executing RRS and BASELINE
 
 Kindly follow these steps sequentially.
 
---- COMPILING AND EXECUTING RRS and BASELINE  --
 
      --- COMPILE ---
 

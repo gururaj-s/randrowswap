@@ -48,8 +48,7 @@
      	    --> Note this command fires all baseline sims: ~78 of them --> takes 7-8 hours to complete.
 
 
-4. Run RRS with the following command from the RRS folder
-         
+4. Run RRS with the following command from the RRS folder         
      	    $ cd rrs/simscript
      	    $ ./runall_rrs.sh
      	    --> Note this command fires all RRS sims: ~78 of them --> takes 7-8 hours to complete.

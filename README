@@ -57,7 +57,7 @@
 
 ### Collate Results
 
-    	    ONLY AFTER ALL SIMULATIONS COMPLETE --> typically 15-16 hours later, you may try to collate the results  
+`ONLY AFTER ALL SIMULATIONS COMPLETE --> typically 15-16 hours later, you may try to collate the results`  
 
 5. Check the performance of RRS normalized to Baseline using the following command (Fig 6).  
 

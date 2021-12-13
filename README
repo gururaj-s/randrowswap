@@ -57,9 +57,10 @@
 
 ### Collate Results
 
+    	    ONLY AFTER ALL SIMULATIONS COMPLETE --> typically 15-16 hours later, you may try to collate the results  
+
 5. Check the performance of RRS normalized to Baseline using the following command (Fig 6).  
 
-     	    --> ONLY AFTER ALL SIMULATIONS COMPLETE --> typically 15-16 hours later, you may try to collate the results  
 
      	    --> Script to collate results is in simscript. Individual results for all workloads and collated results are stored in rrs/RESULTS/    
      	    $ cd rrs/simscript

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Fetch the benchmarks
+# Fetch the benchmarks from "https://www.dropbox.com/s/a6cdraqac79fg53/rrs_benchmarks.tar?dl=1"
 wget -O rrs_bmarks.tar  "https://www.dropbox.com/s/a6cdraqac79fg53/rrs_benchmarks.tar?dl=1"
 
 # Unpack benchmarks

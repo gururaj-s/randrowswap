@@ -19,45 +19,45 @@
 
 1. Fetch input files
 
-	    $ cd rrs/simscript 
-	    $ ./fetch_benchmarks.sh
-	    -- fetches the benchmarks from "https://www.dropbox.com/s/a6cdraqac79fg53/rrs_benchmarks.tar?dl=1" 
+     	    $ cd rrs/simscript 
+     	    $ ./fetch_benchmarks.sh
+     	    --> fetches the benchmarks from "https://www.dropbox.com/s/a6cdraqac79fg53/rrs_benchmarks.tar?dl=1" 
 
 ### Compile
 
 2. Compile baseline with the following steps from the RRS folder
          
-            $ cd rrs/src_baseline
-            $ make clean
-            $ make
+     	    $ cd rrs/src_baseline
+     	    $ make clean
+     	    $ make
 
 
 3. Compile RRS with the following steps from the RRS folder
 
-            $ cd rrs/src_rrs
-            $ make clean
-            $ make
+     	    $ cd rrs/src_rrs
+     	    $ make clean
+     	    $ make
 
 
 ### Execute
 
 3. Run baseline with the following command from the RRS folder
          
-            $ cd rrs/simscript
-            $ ./runall_baseline.sh
-            -- Note this command fires all baseline sims: ~78 of them --> takes 7-8 hours to complete.
+     	    $ cd rrs/simscript
+     	    $ ./runall_baseline.sh
+     	    --> Note this command fires all baseline sims: ~78 of them --> takes 7-8 hours to complete.
 
 
 4. Run RRS with the following command from the RRS folder
          
-            $ cd rrs/simscript
-            $ ./runall_rrs.sh
-            -- Note this command fires all RRS sims: ~78 of them --> takes 7-8 hours to complete.
+     	    $ cd rrs/simscript
+     	    $ ./runall_rrs.sh
+     	    --> Note this command fires all RRS sims: ~78 of them --> takes 7-8 hours to complete.
 
 
 ### Collate Results
 
-ONLY AFTER ALL SIMULATIONS COMPLETE --> typically 15-16 hours later, you may try to collate the results  
+    ONLY AFTER ALL SIMULATIONS COMPLETE --> typically 15-16 hours later, you may try to collate the results  
 
 5. Check the performance of RRS normalized to Baseline using the following command (Fig 6). 
      	    --> Script to collate results is in simscript. Individual results for all workloads and collated results are stored in rrs/RESULTS/

@@ -49,6 +49,7 @@
 
 
 4. Run RRS with the following command from the RRS folder         
+
      	    $ cd rrs/simscript
      	    $ ./runall_rrs.sh
      	    --> Note this command fires all RRS sims: ~78 of them --> takes 7-8 hours to complete.
@@ -59,8 +60,8 @@
     ONLY AFTER ALL SIMULATIONS COMPLETE --> typically 15-16 hours later, you may try to collate the results  
 
 5. Check the performance of RRS normalized to Baseline using the following command (Fig 6). 
-     	    --> Script to collate results is in simscript. Individual results for all workloads and collated results are stored in rrs/RESULTS/
-	    $ cd rrs/simscript
+     	    --> Script to collate results is in simscript. Individual results for all workloads and collated results are stored in rrs/RESULTS/  
+     	    $ cd rrs/simscript
 
      	    --> Normalized performance for workloads in the left half of Fig 6, i.e., workloads with at least one row having > 800 activations / 64ms            
             $ ./getdata.pl -s ADDED_IPC -w interest_name -n 0 -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/

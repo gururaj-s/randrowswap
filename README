@@ -12,8 +12,8 @@
 
 ### Clone the artifact and run the code.
 
-* Fetch the code: `git clone https://gururaj_saileshwar@bitbucket.org/prashantnair13/rrs.git`  
-* Run the artifact: `cd rrs; ./run_artifact.sh`. This command runs all the following steps one by one. You may also follow these subsequent steps manually.
+* **Fetch the code**: `git clone https://gururaj_saileshwar@bitbucket.org/prashantnair13/rrs.git`  
+* **Run the artifact**: `cd rrs; ./run_artifact.sh`. This command runs all the following steps one by one. You may also follow these subsequent steps manually.
 
 ### Download Benchmarks
 

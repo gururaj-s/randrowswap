@@ -7,7 +7,7 @@ echo "###################"
 echo ""
 echo "--> Note: this will download 10GB tar file and occupy 20GB disk-space"
 cd simscript 
-./fetch_benchmarks.sh #  --> fetches the benchmarks from "https://www.dropbox.com/s/a6cdraqac79fg53/rrs_benchmarks.tar?dl=1"
+./fetch_bmarks.sh #  --> fetches the benchmarks from "https://www.dropbox.com/s/a6cdraqac79fg53/rrs_benchmarks.tar?dl=1"
 cd .. ;
 
 ## 2. Compile the Baseline

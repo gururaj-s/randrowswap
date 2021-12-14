@@ -9,6 +9,7 @@ bin/*
 
 # Object Files
 *.o 
+*/*.o 
 
 # Node artifact files
 node_modules/

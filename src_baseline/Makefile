@@ -5,8 +5,8 @@ OBJDIR = ../obj_baseline
 OBJS = $(OBJDIR)/main.o $(OBJDIR)/malloc_lib.o $(OBJDIR)/hash_lib.o $(OBJDIR)/os.o $(OBJDIR)/memory_controller.o $(OBJDIR)/scheduler.o $(OBJDIR)/cache.o
 CC = gcc
 DEBUG = -O3 -g
-CFLAGS = -std=gnu99 -O3 -Wall -c $(DEBUG) 
-LFLAGS = -Wall $(DEBUG)
+CFLAGS = -std=gnu99 -O3 -c $(DEBUG) 
+LFLAGS = $(DEBUG)
 
 
 $(BINDIR)/$(OUT): $(OBJS)

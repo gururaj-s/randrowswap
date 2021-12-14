@@ -78,9 +78,9 @@ while (@ARGV) {
 # create full path to mysim and dest dir
 
 $mysim = "$dest_dir"."/"."sim_baseline.bin";
-$myopt = "$dest_dir"."/"."sim_baseline.opt";
+#$myopt = "$dest_dir"."/"."sim_baseline.opt";
 
-print "$mysim\n";
+#print "$mysim\n";
 
 ##########################################################
 # get the suite names, num_w, and num_p from bench_common
@@ -99,10 +99,10 @@ die "No benchmark set '$isuite' defined in bench_common.pl\n"
 
 if($debug==0){
     mkdir "$dest_dir";
-    system ("ls $dest_dir");
+    #system ("ls $dest_dir");
     system ("cp $sim_exe $mysim");
     system ("chmod +x $mysim");
-    system ("echo $sim_opt > $myopt");
+    #system ("echo $sim_opt > $myopt");
 }
 
 ##########################################################

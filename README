@@ -13,7 +13,7 @@
 ### Clone the artifact and run the code.
 
 * Fetch the code: `git clone https://gururaj_saileshwar@bitbucket.org/prashantnair13/rrs.git`  
-* Run the artifact: `./rrs/run_artifact.sh`. This command runs all the following steps one by one. You may also follow these subsequent steps manually.
+* Run the artifact: `cd rrs; ./run_artifact.sh`. This command runs all the following steps one by one. You may also follow these subsequent steps manually.
 
 ### Download Benchmarks
 
@@ -61,7 +61,7 @@
 
 5. Check the performance of RRS normalized to Baseline using the following command (Fig 6).  
   
-	    --> Script to collate results is in simscript. Individual results for all workloads and collated results are stored in rrs/RESULTS/    
+	    --> Script to collate results is in simscript. Individual results for all workloads and collated results are stored in rrs/output/    
      	    $ cd rrs/simscript
 
 	    --> Normalized performance for workloads in the left half of Fig 6, i.e., workloads with at least one row having > 800 activations / 64ms            

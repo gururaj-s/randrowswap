@@ -6,3 +6,4 @@
 ./runall_baseline.pl --w 8c_2ch_gap --i gap_name --f 30 --d "../output/8c_2ch_baseline" --o "2"
 ./runall_baseline.pl --w 8c_2ch_hmpki --i hmpki_name --f 30 --d "../output/8c_2ch_baseline" --o "2"
 ./runall_baseline.pl --w 8c_2ch_lmpki --i lmpki_name --f 30 --d "../output/8c_2ch_baseline" --o "2"
+./runall_baseline.pl --w 8c_2ch_gups --i gups_name --f 30 --d "../output/8c_2ch_baseline" --o "2"

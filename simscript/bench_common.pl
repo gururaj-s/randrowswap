@@ -37,7 +37,8 @@ face
 mcf
 gromacs
 comm5
-comm3';
+comm3
+gups';
 
 $SUITES{'gups_name'}	=
 'gups';
@@ -273,8 +274,7 @@ $SUITES{'8c_2ch_comm'} =
 input/2channel.cfg input/COMM/comm2.gz input/COMM/comm2.gz input/COMM/comm2.gz input/COMM/comm2.gz input/COMM/comm2.gz input/COMM/comm2.gz input/COMM/comm2.gz input/COMM/comm2.gz
 input/2channel.cfg input/COMM/comm3.gz input/COMM/comm3.gz input/COMM/comm3.gz input/COMM/comm3.gz input/COMM/comm3.gz input/COMM/comm3.gz input/COMM/comm3.gz input/COMM/comm3.gz
 input/2channel.cfg input/COMM/comm4.gz input/COMM/comm4.gz input/COMM/comm4.gz input/COMM/comm4.gz input/COMM/comm4.gz input/COMM/comm4.gz input/COMM/comm4.gz input/COMM/comm4.gz
-input/2channel.cfg input/COMM/comm5.gz input/COMM/comm5.gz input/COMM/comm5.gz input/COMM/comm5.gz input/COMM/comm5.gz input/COMM/comm5.gz input/COMM/comm5.gz input/COMM/comm5.gz
-input/2channel.cfg input/COMM/gups.gz input/COMM/gups.gz input/COMM/gups.gz input/COMM/gups.gz input/COMM/gups.gz input/COMM/gups.gz input/COMM/gups.gz input/COMM/gups.gz';
+input/2channel.cfg input/COMM/comm5.gz input/COMM/comm5.gz input/COMM/comm5.gz input/COMM/comm5.gz input/COMM/comm5.gz input/COMM/comm5.gz input/COMM/comm5.gz input/COMM/comm5.gz';
 
 $SUITES{'8c_2ch_biobench'} =
 'input/2channel.cfg input/BIOBENCH/mummer.gz input/BIOBENCH/mummer.gz input/BIOBENCH/mummer.gz input/BIOBENCH/mummer.gz input/BIOBENCH/mummer.gz input/BIOBENCH/mummer.gz input/BIOBENCH/mummer.gz input/BIOBENCH/mummer.gz
@@ -345,3 +345,6 @@ input/2channel.cfg input/SPEC2K6/tonto.gz input/SPEC2K6/tonto.gz input/SPEC2K6/t
 input/2channel.cfg input/SPEC2K6/calculix.gz input/SPEC2K6/calculix.gz input/SPEC2K6/calculix.gz input/SPEC2K6/calculix.gz input/SPEC2K6/calculix.gz input/SPEC2K6/calculix.gz input/SPEC2K6/calculix.gz input/SPEC2K6/calculix.gz
 input/2channel.cfg input/SPEC2K6/gamess.gz input/SPEC2K6/gamess.gz input/SPEC2K6/gamess.gz input/SPEC2K6/gamess.gz input/SPEC2K6/gamess.gz input/SPEC2K6/gamess.gz input/SPEC2K6/gamess.gz input/SPEC2K6/gamess.gz
 input/2channel.cfg input/SPEC2K6/povray.gz input/SPEC2K6/povray.gz input/SPEC2K6/povray.gz input/SPEC2K6/povray.gz input/SPEC2K6/povray.gz input/SPEC2K6/povray.gz input/SPEC2K6/povray.gz input/SPEC2K6/povray.gz';
+
+$SUITES{'8c_2ch_gups'} =
+'input/2channel.cfg input/COMM/gups.gz input/COMM/gups.gz input/COMM/gups.gz input/COMM/gups.gz input/COMM/gups.gz input/COMM/gups.gz input/COMM/gups.gz input/COMM/gups.gz';

@@ -74,7 +74,7 @@ cd ../ ;
 
 ## wait for RRS runs to finish
 i=0
-while [ `ps -aux | grep sim_baseline.bin | grep -v "grep" | wc -l` -gt 0 ] ; do
+while [ `ps -aux | grep sim_rrs.bin | grep -v "grep" | wc -l` -gt 0 ] ; do
     num_running=`ps -aux | grep sim_baseline.bin | grep -v "grep" | wc -l`
     mins=$(( 10*i ))
     echo "Time Elapsed: ${mins} minutes. Workloads Running: ${num_running}/78";
@@ -93,19 +93,18 @@ echo "6. Collating Results"
 echo "###################"
 echo ""
 
-cd rrs/simscript
+cd simscript
 
 # Normalized Perf. of RRS for Workloads with at least one row having > 800 activations / 64ms            
-./getdata.pl -s ADDED_IPC -w interest_name -n 0 -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
+perl getdata.pl -s ADDED_IPC -w interest_name -n 0 -printmask 0-1  -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
 
-# Normalized Perf. of RRS (Gmean) for SPEC-2006, SPEC-2017, GAP, PARSEC, BIOBENCH, COMM, MIX, ALL-78            
-./getdata.pl -s ADDED_IPC -w spec2006_name -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
-./getdata.pl -s ADDED_IPC -w spec2017_name -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
-./getdata.pl -s ADDED_IPC -w gap_name -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
-./getdata.pl -s ADDED_IPC -w parsec_name -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
-./getdata.pl -s ADDED_IPC -w biobench_name -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
-./getdata.pl -s ADDED_IPC -w comm_name -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
-./getdata.pl -s ADDED_IPC -w mix_name -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
-./getdata.pl -s ADDED_IPC -w all78 -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
-
-
+# Normalized Perf. of RRS (Gmean) for SPEC-2006, SPEC-2017, GAP, PARSEC, BIOBENCH, COMM, MIX, ALL-78     
+echo ""       
+perl getdata.pl -s ADDED_IPC -w spec2006_name -n 0  -nh -printmask 0-1 -gmean -ns -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/  | sed 's/Gmean/SPEC2K6-29/'  | tail -n1 
+perl getdata.pl -s ADDED_IPC -w spec2017_name -n 0  -nh -printmask 0-1 -gmean -ns -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/  | sed 's/Gmean/SPEC2K17-22/' | tail -n1 
+perl getdata.pl -s ADDED_IPC -w gap_name -n 0       -nh -printmask 0-1 -gmean -ns -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/  | sed 's/Gmean/GAP-6/'	    | tail -n1 
+perl getdata.pl -s ADDED_IPC -w parsec_name -n 0    -nh -printmask 0-1 -gmean -ns -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/  | sed 's/Gmean/PARSEC-5/'    | tail -n1 
+perl getdata.pl -s ADDED_IPC -w biobench_name -n 0  -nh -printmask 0-1 -gmean -ns -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/  | sed 's/Gmean/BIOBENCH-2/'  | tail -n1 
+perl getdata.pl -s ADDED_IPC -w comm_name -n 0      -nh -printmask 0-1 -gmean -ns -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/  | sed 's/Gmean/COMM-5/'      | tail -n1 
+perl getdata.pl -s ADDED_IPC -w mix_name -n 0       -nh -printmask 0-1 -gmean -ns -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/  | sed 's/Gmean/MIX-6/'	    | tail -n1 
+perl getdata.pl -s ADDED_IPC -w all78 -n 0          -nh -printmask 0-1 -gmean -ns -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/  | sed 's/Gmean/ALL-78/'      | tail -n1 

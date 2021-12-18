@@ -48,8 +48,8 @@ echo ""
 echo "--> Note this fires all baseline sims: ~78 of them --> takes 7-8 hours to complete."
 echo ""
 cd simscript
-##./runall_baseline.pl --w 8c_2ch_ALL_78_WL --i ALL_78_WL_name --f $firewidth --d "../output/8c_2ch_baseline" --o "2"
-./runall_baseline.pl   --w 8c_2ch_WL_INTEREST --i WL_INTEREST_name --f $firewidth --d "../output/8c_2ch_baseline" --o "2"
+./runall_baseline.pl --w 8c_2ch_ALL_78_WL --i ALL_78_WL_name --f $firewidth --d "../output/8c_2ch_baseline" --o "2"
+##./runall_baseline.pl   --w 8c_2ch_WL_INTEREST --i WL_INTEREST_name --f $firewidth --d "../output/8c_2ch_baseline" --o "2"
 cd ../ ;
 
 ## wait for baseline runs to finish
@@ -75,8 +75,8 @@ echo ""
 "--> Note this fires all RRS sims: ~78 of them --> takes 7-8 hours to complete."
 echo ""
 cd simscript
-##./runall_rrs.pl --w 8c_2ch_ALL_78_WL --i ALL_78_WL_name --f $firewidth --d "../output/8c_2ch_rrs" --o "2"
-./runall_rrs.pl --w   8c_2ch_WL_INTEREST --i WL_INTEREST_name --f $firewidth --d "../output/8c_2ch_rrs" --o "2"
+./runall_rrs.pl --w 8c_2ch_ALL_78_WL --i ALL_78_WL_name --f $firewidth --d "../output/8c_2ch_rrs" --o "2"
+##./runall_rrs.pl --w   8c_2ch_WL_INTEREST --i WL_INTEREST_name --f $firewidth --d "../output/8c_2ch_rrs" --o "2"
 cd ../ ;
 
 ## wait for RRS runs to finish

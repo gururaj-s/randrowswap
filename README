@@ -4,7 +4,7 @@
 **Authors**: Gururaj Saileshwar (Georgia Tech), Bolin Wang (UBC), Moin Qureshi (Georgia Tech), and Prashant Nair (UBC)  
 
 ## Dependencies
-* **Software**: Perl and latest gcc/g++
+* **Software**: Perl (for scripts to run experiments and collate results) and gcc (tested to compile successfully with versions: 4.8.5, 6.4.0, 8.4.0).
 * **Hardware**: For running all the benchmarks, a CPU with lots of memory (128GB+) and cores (64+).
 
 

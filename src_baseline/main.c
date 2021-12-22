@@ -16,6 +16,8 @@
 #include "malloc_lib.h"
 #include "utlist.h"
 #include "utils.h"
+#include <time.h>
+
 #define L3_LATENCY 24
 
 #define MAXTRACELINESIZE 64
@@ -251,7 +253,6 @@ int main(int argc, char *argv[])
     double *ipccore;
     unsigned long long int fakereadreq = 0;
 
-    srand(1234);
     /* Initialization code. */
     printf("Initializing.\n");
 
@@ -656,7 +657,7 @@ int main(int argc, char *argv[])
     while (!expt_done)
     {
         /* For each core, retire instructions if they have finished. */
-        for (int numc = 0; numc < NUMCORES; numc++)
+        for (numc = 0; numc < NUMCORES; numc++)
         {
             num_ret = 0;
             while ((num_ret < MAX_RETIRE) && ROB[numc].inflight)
@@ -1427,6 +1428,8 @@ int random_number(int min_num, int max_num)
             low_num = max_num + 1; // include max_num in output
             hi_num = min_num;
         }
+
+        srand(time(NULL));
         result = (rand() % (hi_num - low_num)) + low_num;
         return result;
     }

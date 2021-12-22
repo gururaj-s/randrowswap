@@ -46,7 +46,6 @@ typedef enum {
     t_xp_token,
     t_xp_dll_token,
     t_data_trans_token,
-    t_rfcmod_token,
     
     vdd_token,
     idd0_token,
@@ -132,8 +131,6 @@ token_t tokenize(char * input){
         return t_ccd_token;
     } else if (strncmp(input, "T_RFC",length) == 0) {
         return t_rfc_token;
-    } else if (strncmp(input, "T_RFCMOD",length) == 0) {
-        return t_rfcmod_token;
     } else if (strncmp(input, "T_REFI",length) == 0) {
         return t_refi_token;
     } else if (strncmp(input, "T_CWD",length) == 0) {
@@ -345,12 +342,7 @@ void read_config_file(FILE * fin)
                 if(fscanf(fin,"%d",&input_int)==1){
                 T_RFC = input_int*PROCESSOR_CLK_MULTIPLIER;}
                 break;
-            
-            case t_rfcmod_token:
-                if(fscanf(fin,"%d",&input_int)==1){
-                T_RFCMOD = input_int*PROCESSOR_CLK_MULTIPLIER;}
-                break;
-                               
+                
             case t_refi_token:
                 if(fscanf(fin,"%d",&input_int)==1){
                 T_REFI = input_int*PROCESSOR_CLK_MULTIPLIER;}

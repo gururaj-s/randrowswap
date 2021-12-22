@@ -16,6 +16,8 @@
 #include "malloc_lib.h"
 #include "utlist.h"
 #include "utils.h"
+#include <time.h>
+
 #define L3_LATENCY 24
 
 #define MAXTRACELINESIZE 64

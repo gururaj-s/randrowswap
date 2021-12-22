@@ -1073,7 +1073,7 @@ int issue_request_command(request_t *request)
 
             // set the completion time of this read request
             // in the ROB and the controller queue.
-            request->completion_time = CYCLE_VAL + T_CAS + T_DATA_TRANS;
+            request->completion_time = CYCLE_VAL + T_CAS + T_DATA_TRANS + 2;
             request->latency = request->completion_time - request->arrival_time;
             request->dispatch_time = CYCLE_VAL;
             request->request_served = 1;
@@ -1143,7 +1143,7 @@ int issue_request_command(request_t *request)
             }
 
             // set the completion time of this write request
-            request->completion_time = CYCLE_VAL + T_DATA_TRANS + T_WR;
+            request->completion_time = CYCLE_VAL + T_DATA_TRANS + T_WR + 2;
             request->latency = request->completion_time - request->arrival_time;
             request->dispatch_time = CYCLE_VAL;
             request->request_served = 1;

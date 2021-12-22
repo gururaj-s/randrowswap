@@ -3,6 +3,7 @@
 #include "utils.h"
 #include <stdlib.h>
 #include "memory_controller.h"
+#include <time.h>
 #include "params.h"
 
 #define ROWMEM 131072
@@ -254,13 +255,15 @@ void schedule_fcfs(int channel)
             drain_writes[channel] = 1;
     }
 
+    int val = rand();
     // If in write drain mode, look through all the write queue
     // elements (already arranged in the order of arrival), and
     // issue the command for the first request that is ready
     if(drain_writes[channel])
     {
-        for(int bank = 0; bank < NUM_BANKS; bank++)
+        for(int i = 0; i < NUM_BANKS; i++)
         {
+            int bank = (val+i)%NUM_BANKS;
             LL_FOREACH(write_queue_head[channel], wr_ptr)
             {
                 if((wr_ptr->dram_addr.bank == bank) && (wr_ptr->command_issuable)){
@@ -283,8 +286,9 @@ void schedule_fcfs(int channel)
     // Simple FCFS
     if(!drain_writes[channel])
     {
-        for(int bank = 0; bank < NUM_BANKS; bank++)
+        for(int i = 0; i < NUM_BANKS; i++)
         {
+            int bank = (val+i)%NUM_BANKS;
             LL_FOREACH(read_queue_head[channel],rd_ptr)
             {
                 if((rd_ptr->dram_addr.bank == bank) && (rd_ptr->command_issuable)){ 

@@ -82,7 +82,7 @@ cd ../ ;
 ## wait for RRS runs to finish
 i=0
 while [ `ps -aux | grep sim_rrs.bin | grep -v "grep" | wc -l` -gt 0 ] ; do
-    num_running=`ps -aux | grep sim_baseline.bin | grep -v "grep" | wc -l`
+    num_running=`ps -aux | grep sim_rrs.bin | grep -v "grep" | wc -l`
     mins=$(( 10*i ))
     echo "Time Elapsed: ${mins} minutes. Workloads Running: ${num_running}/78";
     echo "";

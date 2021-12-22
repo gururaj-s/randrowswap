@@ -136,11 +136,6 @@ int T_REFI;
 // refresh cycle time
 int T_RFC;
 
-// refresh cycle time -- mod
-int T_RFCMOD;
-
-
-
 /****************************/
 /* VOLTAGE & CURRENT VALUES */
 /****************************/

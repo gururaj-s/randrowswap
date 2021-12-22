@@ -3,6 +3,7 @@
 #include "utils.h"
 #include <stdlib.h>
 #include "memory_controller.h"
+#include <time.h>
 #include "params.h"
 
 //Common Variable
@@ -48,8 +49,8 @@ void init_scheduler_vars ()
 {
     int i, j, k;
     unsigned long long int rth_actual = RTH;
-    rth_actual = rth_actual >> 2; // Divide this by 4
-    mg_entries = 1700000/rth_actual;
+    rth_actual = rth_actual/5; // Divide this by 5
+    mg_entries = 1360000/rth_actual;
 
     // initialize all scheduler variables here
     uniquecount = 0;
@@ -142,7 +143,7 @@ void init_scheduler_vars ()
 int misraGries(int channel, int rank, int bank, unsigned long long int rowaddr)
 {
     unsigned long long int rth_actual = RTH;
-    rth_actual = rth_actual >> 2;
+    rth_actual = rth_actual/5;
 
     unique[channel][rank][bank][rowaddr] = 1;
 
@@ -368,6 +369,7 @@ void schedule_fcfs(int channel)
                         {
                             delay_stall[channel][wr_ptr->dram_addr.rank] = 1;
                             prob_tracker[channel]++;
+			    ract_temp[channel][wr_ptr->dram_addr.rank][wr_ptr->dram_addr.bank][wr_ptr->dram_addr.row]++;
                         }
                     }
                     issue_request_command(wr_ptr);
@@ -398,7 +400,8 @@ void schedule_fcfs(int channel)
                         {
                             delay_stall[channel][rd_ptr->dram_addr.rank] = 1;
                             prob_tracker[channel]++;
-                        }
+	                    ract_temp[channel][rd_ptr->dram_addr.rank][rd_ptr->dram_addr.bank][rd_ptr->dram_addr.row]++;
+			}
                     }
                     issue_request_command(rd_ptr);
                     return;
@@ -2077,7 +2080,7 @@ void scheduler_stats()
     unsigned long long int tempvar2 = 0;
     unsigned long long int tempvar3 = 0;
     unsigned long long int uniquebankcount = 0;
-    unsigned long long int ref_int = CYCLE_VAL/(204800000);
+    unsigned long long int ref_int = CYCLE_VAL/204800000;
 
     printf("M1SB\t : %f\n",((double)sbm1)/tem1);
     printf("Total fake number is %llu\n", prefetch_counter);
@@ -2112,7 +2115,7 @@ void scheduler_stats()
     printf("RTH : %d\n", RTH);
 
     unsigned long long int maxactstat = 0;
-    unsigned long long int num_ref = (CYCLE_VAL/(204800000));
+    unsigned long long int num_ref = CYCLE_VAL/204800000;
     
     for (int i = 0; i < MAX_NUM_CHANNELS; i++){
         for (int j = 0; j < MAX_NUM_RANKS; j++){
@@ -2140,6 +2143,5 @@ void scheduler_stats()
         printf("Above%d : %llu\n", 200*(z+1), maxactstat);
     }
     printf("\n\n");
-
     /* Nothing to print for now. */
 }

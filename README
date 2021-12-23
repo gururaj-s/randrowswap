@@ -98,10 +98,11 @@
 Our simulator uses traces of L2-Cache Misses (memory accesses filtered through the L1 and L2 cache). 
 
 Each line in our trace has the following format and has information regarding one L2-Cache Miss:    
-`< num_nonmem_ops, R/W, Address, DontCare1-4byte, DontCare2-4byte>`. We describe these fields below:  
+`< num_nonmem_ops, R/W, Address, DontCare1-4byte, DontCare2-4byte>`.  
+We describe these fields below:  
    - **num_nonmem_ops**: This is a 4-byte int storing the number of instructions between the current and previous L2-miss. This is useful in IPC calculation.  
    - **R/W**: This is a 1-byte char that encodes whether the L2-miss is a read request ('R') to L3, or a write-back request to L3 ('W').  
-   - **Address:** This is a 8-byte long long int, that stores the 64-byte line-address accessed (virtual address).   
+   - **Address:** This is a 8-byte long long int, that stores the 64-byte line-address accessed (virtual address).  
    - **DontCare1-4byte**, **DontCare2-4byte**: These fields are ignored by the simulator (can be 0s in the trace).  
 
 #### Information on Trace Generation

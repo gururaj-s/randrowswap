@@ -6,6 +6,7 @@
 ## Dependencies
 * **Software**: Perl (for scripts to run experiments and collate results) and gcc (tested to compile successfully with versions: 4.8.5, 6.4.0, 8.4.0).
 * **Hardware**: For running all the benchmarks, a CPU with lots of memory (128GB+) and cores (64+).
+* **Traces**: Our traces (~10GB) for this simulator are available at this [link](https://www.dropbox.com/s/a6cdraqac79fg53/rrs_benchmarks.tar?dl=0). We generate them using an Intel Pintool (version 2.12), similar to this [link](https://github.com/jingpu/pintools/blob/master/source/tools/SimpleExamples/pinatrace.cpp), although traces extracted in the format mentioned below by any methodology (any Pin version) would be supported. 
 
 
 ## Compiling and Executing RRS and BASELINE

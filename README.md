@@ -15,14 +15,8 @@
 
 * **Fetch the code**: `git clone https://gururaj_saileshwar@bitbucket.org/prashantnair13/rrs.git`  
 * **Run the artifact**: `cd rrs; ./run_artifact.sh`. This command runs all the following steps (compile, execute, collate results). You may also follow these steps manually.
-
-### Tracing
-Our simulator requires that memory-access traces are available in `/input` folder.  
-* You can generate the memory access traces (in the trace format described at the end of the README) for any program with Intel Pintool (v2.12) and use it with our artifact.  
-* We have created the artifact assuming program traces from the benchmark suites of BIOBENCH, COMM, GAP, PARSEC, SPEC2K17, SPEC2K6 are used.  
-* Each benchmark-suite folder (`/input/{SUITE-NAME}`) has a `{SUITE-NAME}.workloads` file, that lists the trace-file names ({trace-file}.gz) which are expected within each bechmark suite folder.  
-* You can edit the suites and trace-file names as per your use-case, but you need to update the `simscript/bench_common.pl` with the suite and trace-file names to ensure the runscript (`simscript/runall.pl`) is aware of these updates.  
-
+* **Note:** Our artifact requires  memory-access traces as input and assumes that they are available in `/input` folder. We provide information on how traces can be generated at the end of the README.md.
+ 
 ### Compile
 
 1. Compile baseline with the following steps from the RRS folder
@@ -94,6 +88,14 @@ Our simulator requires that memory-access traces are available in `/input` folde
 
 	    -- These numbers should be reflective of Figure 6 -- Performance Numbers.
 
+
+### Input Traces
+Our simulator requires that memory-access traces are generated and available in `/input` folder.  
+* You can generate the memory access traces (in the trace format described at the end of the README) for any program with Intel Pintool (v2.12) and use it with our artifact.  
+* We have created the artifact assuming program traces from the benchmark suites of BIOBENCH, COMM, GAP, PARSEC, SPEC2K17, SPEC2K6 are used.  
+* Each benchmark-suite folder (`/input/{SUITE-NAME}`) has a `{SUITE-NAME}.workloads` file, that lists the trace-file names ({trace-file}.gz) which are expected within each bechmark suite folder.  
+* You can edit the suites and trace-file names as per your use-case, but you need to update the `simscript/bench_common.pl` with the suite and trace-file names to ensure the runscript (`simscript/runall.pl`) is aware of these updates.  
+
 ### Trace Format
 Our simulator uses traces of L2-Cache Misses (memory accesses filtered through the L1 and L2 cache). 
 The trace file is a `.gz` file generated using `gzwrite()` to a `gzFile*` and read using `gzgets()`.
@@ -106,5 +108,5 @@ Each entry in our trace has the following format and has information regarding o
    - **Address:** This is am 8-byte long long int, that stores the 64-byte cacheline's address accessed (virtual address).  
    - **DontCare1-4byte**, **DontCare2-4byte**: These fields are ignored by the simulator (can be 0s in the trace).  
 
-#### Information on Trace Generation
+#### Trace Generation
 We use Intel Pintool to instrument execution of a program and get its memory accesses (similar to the intel starter [pintool](https://github.com/jingpu/pintools/blob/master/source/tools/SimpleExamples/pinatrace.cpp), here is a useful [guide](https://mahmoudhatem.wordpress.com/2016/11/07/tracing-memory-access-of-an-oracle-process-intel-pintools/) to understand this). We obtain the memory accesses for a representative section of the program and filter the memory accesses through a two level non-inclusive cache hierarchy implemented within the pintool, to obtain the L2-Miss Trace. We produce the trace file by writing each line of the trace to a compressed file stream. We generated the traces for SPEC 2k6, 2k17 and GAP using this methodology and reformatted the traces for PARSEC and COMM provided the USIMM distribution ([link](http://utaharch.blogspot.com/2012/02/usimm.html)). Our traces we used for this project are available at: https://www.dropbox.com/s/a6cdraqac79fg53/rrs_benchmarks.tar?dl=0.

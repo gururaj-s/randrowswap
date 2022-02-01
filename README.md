@@ -89,7 +89,7 @@
 	    -- These numbers should be reflective of Figure 6 -- Performance Numbers.
 
 
-### Input Traces
+## Input Trace Files
 Our simulator requires that memory-access traces are generated and available in `/input` folder.  
 * You can generate the memory access traces (in the trace format described at the end of the README) for any program with Intel Pintool (v2.12) and use it with our artifact.  
 * We have created the artifact assuming program traces from the benchmark suites of BIOBENCH, COMM, GAP, PARSEC, SPEC2K17, SPEC2K6 are used.  

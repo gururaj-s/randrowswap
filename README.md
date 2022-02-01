@@ -14,7 +14,7 @@
 ### Clone the artifact and run the code.
 
 * **Fetch the code**: `git clone https://gururaj_saileshwar@bitbucket.org/prashantnair13/rrs.git`  
-* **Run the artifact**: `cd rrs; ./run_artifact.sh`. This command runs all the following steps one by one. You may also follow these subsequent steps manually.
+* **Run the artifact**: `cd rrs; ./run_artifact.sh`. This command runs all the following steps (compile, execute, collate results). You may also follow these steps manually.
 
 ### Tracing
 Our simulator requires that memory-access traces are available in `/input` folder.  

@@ -1,18 +1,14 @@
 # Randomized Row Swap (ASPLOS'22)
+[![CC BY 4.0][cc-by-shield]][cc-by]
+This work is licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+
 **Paper**: Randomized Row-Swap: Mitigating Row Hammer by Breaking Spatial Correlation Between Aggressor and Victim Rows  
 **Conference**: ASPLOS'22  
 **Authors**: Gururaj Saileshwar (Georgia Tech), Bolin Wang (UBC), Moin Qureshi (Georgia Tech), and Prashant Nair (UBC)  
 
-[![CC BY 4.0][cc-by-shield]][cc-by]
 
-This work is licensed under a
-[Creative Commons Attribution 4.0 International License][cc-by].
-
-[![CC BY 4.0][cc-by-image]][cc-by]
-
-[cc-by]: http://creativecommons.org/licenses/by/4.0/
-[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
-[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
 ## Dependencies
 * **Software**: Perl (for scripts to run experiments and collate results) and gcc (tested to compile successfully with versions: 4.8.5, 6.4.0, 8.4.0). 

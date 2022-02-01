@@ -5,44 +5,43 @@
 ## (number of processes to run at a time)
 firewidth=80
 ##########
- 
-## 1. Fetch Input Files
-echo "###################"
-echo "1. Fetching Input Files"
-echo "###################"
-echo ""
-echo "--> Note: this will download 10GB tar file and occupy 20GB disk-space"
-cd simscript 
-./fetch_bmarks.sh #  --> fetches the benchmarks from "https://www.dropbox.com/s/a6cdraqac79fg53/rrs_benchmarks.tar?dl=1"
-cd .. ;
 
-## 2. Compile the Baseline
+## 0. Get Traces Ready
 echo "---------------------------"
 echo ""
 echo "#####################"
-echo "2. Compiling Baseline"
+echo "0. Trace Inputs"
+echo "#####################"
+echo ""
+echo "Note: This artifact requires memory-access traces to be already available." 
+
+## 1. Compile the Baseline
+echo "---------------------------"
+echo ""
+echo "#####################"
+echo "1. Compiling Baseline"
 echo "#####################"
 echo ""
 cd src_baseline
 make clean; make;
 cd .. ;
 
-## 3. Compiling RRS
+## 2. Compiling RRS
 echo "---------------------------"
 echo ""
 echo "#####################"
-echo "3. Compiling RRS"
+echo "2. Compiling RRS"
 echo "#####################"
 echo ""
 cd src_rrs
 make clean; make;
 cd .. ;
 
-## 4. Running Baseline
+## 3. Running Baseline
 echo "---------------------------"
 echo ""
 echo "#####################"
-echo "4. Running Baseline"
+echo "3. Running Baseline"
 echo "#####################"
 echo ""
 echo "--> Note this fires all baseline sims: ~78 of them --> takes 7-8 hours to complete."
@@ -65,11 +64,11 @@ done
 echo "Baseline Runs Completed!"
 
 
-## 5. Running RRS
+## 4. Running RRS
 echo "---------------------------"
 echo ""
 echo "###################"
-echo "5. Running RRS"
+echo "4. Running RRS"
 echo "###################"
 echo ""
 "--> Note this fires all RRS sims: ~78 of them --> takes 7-8 hours to complete."
@@ -92,11 +91,11 @@ done
 echo "RRS Runs Completed!"
 
 
-## 6. Collate Results
+## 5. Collate Results
 echo "---------------------------"
 echo ""
 echo "###################"
-echo "6. Collating Results"
+echo "5. Collating Results"
 echo "###################"
 echo ""
 

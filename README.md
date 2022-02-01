@@ -4,9 +4,9 @@
 **Authors**: Gururaj Saileshwar (Georgia Tech), Bolin Wang (UBC), Moin Qureshi (Georgia Tech), and Prashant Nair (UBC)  
 
 ## Dependencies
-* **Software**: Perl (for scripts to run experiments and collate results) and gcc (tested to compile successfully with versions: 4.8.5, 6.4.0, 8.4.0).
+* **Software**: Perl (for scripts to run experiments and collate results) and gcc (tested to compile successfully with versions: 4.8.5, 6.4.0, 8.4.0). 
 * **Hardware**: For running all the benchmarks, a CPU with lots of memory (128GB+) and cores (64+).
-* **Traces**: Our traces (~10GB) for this simulator are available at this [link](https://www.dropbox.com/s/a6cdraqac79fg53/rrs_benchmarks.tar?dl=0). We generate them using an Intel Pintool (version 2.12), similar to this [link](https://github.com/jingpu/pintools/blob/master/source/tools/SimpleExamples/pinatrace.cpp), although traces extracted in the format mentioned below by any methodology (any Pin version) would be supported. 
+* **Traces**: Our simulator requires traces of memory-accesses for benchmarks (filtered through a L1 and L2 cache). We generate these traces using an Intel Pintool (version 2.12), similar to this [pin-tool](https://github.com/jingpu/pintools/blob/master/source/tools/SimpleExamples/pinatrace.cpp). However, traces extracted in the format described at the end of the README by any methodology (e.g., any Pin version) would be supported. 
 
 
 ## Compiling and Executing RRS and BASELINE
@@ -16,24 +16,22 @@
 * **Fetch the code**: `git clone https://gururaj_saileshwar@bitbucket.org/prashantnair13/rrs.git`  
 * **Run the artifact**: `cd rrs; ./run_artifact.sh`. This command runs all the following steps one by one. You may also follow these subsequent steps manually.
 
-### Download Benchmarks
-
-1. Fetch input files
-
-     	    $ cd rrs/simscript 
-     	    $ ./fetch_benchmarks.sh
-     	    --> fetches the benchmarks from "https://www.dropbox.com/s/a6cdraqac79fg53/rrs_benchmarks.tar?dl=1" 
+### Tracing
+0. Simulator assumes that the memory-access traces are available in `/input` folder.
+   	     --> We use several benchmark suites (BIOBENCH, COMM, GAP, PARSEC, SPEC2K17, SPEC2K6), and generate the memory access traces (in the format described below) for programs in these suites using Intel Pintool (v2.12).
+	     --> Each benchmark-suite folder (`/input/{SUITE-NAME}`) has a `{SUITE-NAME}.workloads` file, that lists the trace-file names ({trace-file}.gz) the run scripts expect within each bechmark-suite folder.
+	     --> You can edit this folder structure and the trace-file names to suit your use-case, but you need to also update the `simscript/bench_common.pl` with the names of the suite and trace-file names to ensure the runscript (`simscript/runall.pl`) is aware of these new trace files.
 
 ### Compile
 
-2. Compile baseline with the following steps from the RRS folder
+1. Compile baseline with the following steps from the RRS folder
          
      	    $ cd rrs/src_baseline
      	    $ make clean
      	    $ make
 
 
-3. Compile RRS with the following steps from the RRS folder
+2. Compile RRS with the following steps from the RRS folder
 
      	    $ cd rrs/src_rrs
      	    $ make clean
@@ -46,14 +44,14 @@
          
      	    $ cd rrs/simscript
      	    $ ./runall_baseline.sh
-     	    --> Note this command fires all baseline sims: ~78 of them --> takes 7-8 hours to complete.
+     	    --> Note this command assumes traces files are present for all 78 benchmarks and fires baseline sims for all of them in parallel: --> takes 7-8 hours to complete.
 
 
 4. Run RRS with the following command from the RRS folder         
 
      	    $ cd rrs/simscript
      	    $ ./runall_rrs.sh
-     	    --> Note this command fires all RRS sims: ~78 of them --> takes 7-8 hours to complete.
+     	    --> Note this command assumes traces files are present for all 78 benchmarks and fires RRS sims for all of them in parallel: --> takes 7-8 hours to complete.
 
 
 ### Collate Results
@@ -93,17 +91,18 @@
 	    --> Gmean value for ALL benchmarks                              
             $ ./getdata.pl -s ADDED_IPC -w all78 -n 0 -gmean -d ../output/8c_2ch_baseline/ ../output/8c_2ch_rrs/
 
-	    -- These numbers should be reflective of Figure 6 -- Performance Numbers (deviations of ~1% possible due to different random number generator seed i.e. time)
+	    -- These numbers should be reflective of Figure 6 -- Performance Numbers.
 
 ### Trace Format
 Our simulator uses traces of L2-Cache Misses (memory accesses filtered through the L1 and L2 cache). 
+The trace file is a `.gz` file generated using `gzwrite()` to a `gzFile*` and read using `gzgets()`.
 
-Each line in our trace has the following format and has information regarding one L2-Cache Miss:    
+Each entry in our trace has the following format and has information regarding one L2-Cache Miss:    
 `< num_nonmem_ops, R/W, Address, DontCare1-4byte, DontCare2-4byte>`. We describe these fields below:  
 
    - **num_nonmem_ops**: This is a 4-byte int storing the number of instructions between the current and previous L2-miss. This is useful in IPC calculation.  
    - **R/W**: This is a 1-byte char that encodes whether the L2-miss is a read request ('R') to L3, or a write-back request to L3 ('W').  
-   - **Address:** This is am 8-byte long long int, that stores the 64-byte line-address accessed (virtual address).  
+   - **Address:** This is am 8-byte long long int, that stores the 64-byte cacheline's address accessed (virtual address).  
    - **DontCare1-4byte**, **DontCare2-4byte**: These fields are ignored by the simulator (can be 0s in the trace).  
 
 #### Information on Trace Generation

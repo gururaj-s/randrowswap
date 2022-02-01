@@ -17,10 +17,11 @@
 * **Run the artifact**: `cd rrs; ./run_artifact.sh`. This command runs all the following steps one by one. You may also follow these subsequent steps manually.
 
 ### Tracing
-0. Simulator assumes that the memory-access traces are available in `/input` folder.  
-   	     --> We use several benchmark suites (BIOBENCH, COMM, GAP, PARSEC, SPEC2K17, SPEC2K6), and generate the memory access traces (in the format described below) for programs in these suites using Intel Pintool (v2.12).  
-	     --> Each benchmark-suite folder (`/input/{SUITE-NAME}`) has a `{SUITE-NAME}.workloads` file, that lists the trace-file names ({trace-file}.gz) the run scripts expect within each bechmark-suite folder.  
-	     --> You can edit this folder structure and the trace-file names to suit your use-case, but you need to also update the `simscript/bench_common.pl` with the names of the suite and trace-file names to ensure the runscript (`simscript/runall.pl`) is aware of these new trace files.  
+Our simulator requires that memory-access traces are available in `/input` folder.  
+   	     * You can generate the memory access traces (in the trace format described at the end of the README) for any program with Intel Pintool (v2.12) and use it with our artifact.  
+	     * We have created the artifact assuming program traces from the benchmark suites of BIOBENCH, COMM, GAP, PARSEC, SPEC2K17, SPEC2K6 are used.  
+	     * Each benchmark-suite folder (`/input/{SUITE-NAME}`) has a `{SUITE-NAME}.workloads` file, that lists the trace-file names ({trace-file}.gz) which are expected within each bechmark suite folder.  
+	     * You can edit the suites and trace-file names as per your use-case, but you need to update the `simscript/bench_common.pl` with the suite and trace-file names to ensure the runscript (`simscript/runall.pl`) is aware of these updates.  
 
 ### Compile
 

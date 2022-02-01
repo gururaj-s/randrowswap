@@ -18,10 +18,10 @@
 
 ### Tracing
 Our simulator requires that memory-access traces are available in `/input` folder.  
-   	     * You can generate the memory access traces (in the trace format described at the end of the README) for any program with Intel Pintool (v2.12) and use it with our artifact.  
-	     * We have created the artifact assuming program traces from the benchmark suites of BIOBENCH, COMM, GAP, PARSEC, SPEC2K17, SPEC2K6 are used.  
-	     * Each benchmark-suite folder (`/input/{SUITE-NAME}`) has a `{SUITE-NAME}.workloads` file, that lists the trace-file names ({trace-file}.gz) which are expected within each bechmark suite folder.  
-	     * You can edit the suites and trace-file names as per your use-case, but you need to update the `simscript/bench_common.pl` with the suite and trace-file names to ensure the runscript (`simscript/runall.pl`) is aware of these updates.  
+* You can generate the memory access traces (in the trace format described at the end of the README) for any program with Intel Pintool (v2.12) and use it with our artifact.  
+* We have created the artifact assuming program traces from the benchmark suites of BIOBENCH, COMM, GAP, PARSEC, SPEC2K17, SPEC2K6 are used.  
+* Each benchmark-suite folder (`/input/{SUITE-NAME}`) has a `{SUITE-NAME}.workloads` file, that lists the trace-file names ({trace-file}.gz) which are expected within each bechmark suite folder.  
+* You can edit the suites and trace-file names as per your use-case, but you need to update the `simscript/bench_common.pl` with the suite and trace-file names to ensure the runscript (`simscript/runall.pl`) is aware of these updates.  
 
 ### Compile
 
